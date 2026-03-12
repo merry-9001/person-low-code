@@ -28,16 +28,19 @@ const currentCom = computed(() => store.coms[store.currentComponentIndex])
 <style scoped lang="scss">
 .right-side-container {
   width: 320px;
-  height: calc(100vh - 50px - 40px);
+  height: calc(100vh - 56px - 40px);
   position: fixed;
   right: 20px;
-  top: 70px;
+  top: 76px;
   background-color: var(--white);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
   overflow-y: scroll;
 }
 .content {
   height: 100%;
+  color: var(--font-color-light);
+  font-size: var(--font-size-lg);
 }
 </style>

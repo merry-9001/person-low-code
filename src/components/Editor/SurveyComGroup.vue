@@ -7,7 +7,7 @@
         </el-icon>
         <div class="ml-5 title">{{ title }}</div>
       </div>
-      <div class="flex wrap space-between">
+      <div class="item-list">
         <SurveyComItem v-for="(item, index) in list" :key="index" :item="item" />
       </div>
     </div>
@@ -43,5 +43,11 @@ defineProps({
   font-size: var(--font-size-base);
   position: relative;
   bottom: 1px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 8px;
 }
 </style>

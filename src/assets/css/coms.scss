@@ -18,3 +18,18 @@
   background-color: var(--info-color);
   color: var(--white);
 }
+
+.el-button {
+  border-radius: 10px;
+  transition: all var(--transition-base);
+}
+
+.el-button:not(.is-disabled):hover {
+  transform: translateY(-1px);
+}
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  border-radius: 10px;
+}

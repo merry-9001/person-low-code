@@ -61,19 +61,25 @@ const clickHandle = function (index: number) {
 
 <style scoped>
 .item {
-  /* outline: 1px solid black; */
   color: var(--font-color-light);
   font-size: var(--font-size-base);
   padding: 10px;
   cursor: pointer;
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  transition: all var(--transition-base);
+}
+.item:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
 }
 .tip {
-  height: calc(100% - 50px);
+  height: calc(100% - 40px);
 }
 .active {
-  transform: scale(1.04);
-  transition: 0.5s;
-  background-color: var(--border-color);
-  border-radius: var(--border-radius-lg);
+  transform: translateY(-1px);
+  transition: all var(--transition-base);
+  background-color: #eef2ff;
+  border-radius: var(--border-radius-md);
 }
 </style>

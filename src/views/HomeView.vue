@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <div class="container">
-      <h1 class="font-weight-100 text-center">渡一问卷系统</h1>
-      <div class="mb-15">
+  <div class="home-page">
+    <div class="container page-card">
+      <h1 class="page-title text-center">问卷管理系统</h1>
+      <div class="action-row mb-15">
         <el-button type="primary" :icon="Plus" @click="goToEditor">创建问卷</el-button>
         <el-button type="success" :icon="Compass" @click="goToComMarket">组件市场</el-button>
       </div>
-      <el-table :data="tableData" style="width: 100%" border>
+      <el-table :data="tableData" style="width: 100%" border stripe>
         <el-table-column
           fixed
           prop="createDate"
@@ -23,15 +23,15 @@
           align="center"
           :formatter="formatDate"
         />
-        <el-table-column fixed="right" label="操作" width="300" align="center">
+        <el-table-column fixed="right" label="操作" width="360" align="center">
           <template #default="scope">
-            <el-button link type="primary" size="small" @click="viewSurvey(scope.row)"
+            <el-button link type="primary" class="op-action-btn" @click="viewSurvey(scope.row)"
               >查看问卷</el-button
             >
-            <el-button link type="primary" size="small" @click="editSurvey(scope.row)"
+            <el-button link type="primary" class="op-action-btn" @click="editSurvey(scope.row)"
               >编辑</el-button
             >
-            <el-button link type="primary" size="small" @click="delSurvey(scope.row)"
+            <el-button link type="danger" class="op-action-btn" @click="delSurvey(scope.row)"
               >删除</el-button
             >
           </template>
@@ -93,7 +93,66 @@ const delSurvey = (surveyInfo: SurveyDBReturnData) => {
 </script>
 
 <style scoped>
+.home-page {
+  min-height: 100vh;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
 .container {
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+  animation: page-fade-in 0.5s ease;
+}
+
+.action-row {
+  display: flex;
+  gap: 12px;
+}
+
+:deep(.el-table) {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+:deep(.el-table th.el-table__cell) {
+  background: var(--background-soft);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+:deep(.el-table tr) {
+  transition: background-color var(--transition-base);
+}
+
+:deep(.op-action-btn) {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 8px;
+  line-height: 1;
+}
+
+:deep(.op-action-btn + .op-action-btn) {
+  margin-left: 12px;
+}
+
+:deep(.op-action-btn .el-button__text) {
+  transition: all var(--transition-base);
+}
+
+:deep(.op-action-btn:hover .el-button__text) {
+  transform: translateY(-1px);
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

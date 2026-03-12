@@ -103,31 +103,35 @@ function dragstart() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .center-container {
   width: 50%;
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
-  margin: 70px auto;
-  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  margin: 76px auto;
+  padding: 22px;
   background: var(--white);
   position: relative;
+  box-shadow: var(--card-shadow);
   .content {
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     background-color: var(--white);
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--border-radius-md);
+    border: 1px solid transparent;
+    transition: all var(--transition-base);
     &:hover {
-      transform: scale(1.01);
-      transition: 0.5s;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+      border-color: #c7d2fe;
+      box-shadow: var(--card-shadow-hover);
     }
   }
 }
 .active {
-  transform: scale(1.01);
-  transition: 0.5s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: all var(--transition-base);
+  border-color: #a5b4fc !important;
+  box-shadow: var(--card-shadow-hover);
 }
 .delete-btn {
   right: -5px;

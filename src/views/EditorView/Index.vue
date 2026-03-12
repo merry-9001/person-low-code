@@ -76,7 +76,8 @@ provide('getPicLink', getPicLink)
 <style scoped lang="scss">
 .header {
   width: 100%;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
   z-index: 10;
@@ -84,10 +85,22 @@ provide('getPicLink', getPicLink)
 .container {
   width: calc(100vw - 40px);
   padding: 20px;
-  // Header的高度50px，上下padding 20px
-  height: calc(100vh - 50px - 40px);
-  background: url('@/assets/imgs/editor_background.png');
+  // Header高度56px，上下padding 20px
+  height: calc(100vh - 56px - 40px);
+  background: var(--app-gradient);
   position: fixed;
-  top: 50px;
+  top: 56px;
+  overflow: hidden;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(79, 70, 229, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 70, 229, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
 }
 </style>

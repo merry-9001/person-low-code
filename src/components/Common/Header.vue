@@ -117,20 +117,24 @@ function preview() {
 <style scoped lang="scss">
 .container {
   width: 100%;
-  height: 50px;
-  border-bottom: 1px solid var(--border-color);
+  height: 56px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
   .left {
-    width: 60px;
+    width: 72px;
     height: 100%;
   }
   .center {
     flex: 1;
     height: 100%;
-    border-left: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
+    border-left: 1px solid rgba(148, 163, 184, 0.22);
+    border-right: 1px solid rgba(148, 163, 184, 0.22);
+    :deep(.el-button + .el-button) {
+      margin-left: 10px;
+    }
   }
   .right {
-    width: 80px;
+    width: 92px;
     height: 100%;
   }
 }

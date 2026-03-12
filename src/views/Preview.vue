@@ -133,17 +133,24 @@ function copyLink() {
 .preview-container {
   width: 100vw;
   min-height: 100vh;
-  background: url('@/assets/imgs/editor_background.png');
+  background: var(--app-gradient);
 }
 .center {
   width: 800px;
+  padding-top: 24px;
+  animation: fade-up 0.5s ease;
 }
 .button-group {
   width: 100%;
   height: 60px;
   top: 0;
   left: 0;
-  background-color: var(--white);
+  padding: 0 14px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
   z-index: 100;
 }
 .content-group {
@@ -151,7 +158,18 @@ function copyLink() {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
   background: var(--white);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media print {
   .no-print {

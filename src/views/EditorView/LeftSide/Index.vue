@@ -56,13 +56,14 @@ const switchOutline = () => {
 <style scoped lang="scss">
 .left-side-container {
   width: 300px;
-  height: calc(100vh - 50px - 40px);
+  height: calc(100vh - 56px - 40px);
   position: fixed;
   left: 20px;
-  top: 70px;
+  top: 76px;
   background: var(--white);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
   > .tabs {
     width: 20%;
     height: 100%;
@@ -77,6 +78,10 @@ const switchOutline = () => {
       color: var(--font-color-light);
       text-decoration: none;
       cursor: pointer;
+      transition: all var(--transition-base);
+      &:hover {
+        background: var(--background-soft);
+      }
       > .tab-item-title {
         font-size: var(--font-size-base);
       }
@@ -88,7 +93,7 @@ const switchOutline = () => {
   > .tab-pane {
     width: 80%;
     // 高度需要减去padding部分，否则会溢出
-    height: calc(100% - 50px);
+    height: calc(100% - 40px);
     padding: 25px;
     overflow-y: scroll;
   }

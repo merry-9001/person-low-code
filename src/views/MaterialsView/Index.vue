@@ -1,8 +1,8 @@
 <template>
   <Header :isEditor="false" />
-  <div>
-    <h1 class="font-weight-100 text-center m0 p0">组件市场</h1>
-    <div class="container mc flex">
+  <div class="materials-page">
+    <h1 class="page-title text-center m0 p0">组件市场</h1>
+    <div class="container mc flex page-card">
       <nav class="category mc">
         <Router-Link to="/select-group" class="category-item">
           <el-icon>
@@ -58,10 +58,13 @@ import { CircleCheck, Files, EditPen, ChatLineSquare, User, Message } from '@ele
 .container {
   width: 1180px;
   height: 600px;
+  overflow: hidden;
 }
 .category {
   width: 70px;
   height: 100%;
+  padding: 16px 0;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
   > .category-item {
     width: 70px;
     height: 70px;
@@ -73,32 +76,40 @@ import { CircleCheck, Files, EditPen, ChatLineSquare, User, Message } from '@ele
     text-align: center;
     text-decoration: none;
     font-size: var(--font-size-base);
-    color: var(--white);
+    color: var(--primary-color);
+    background: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.14);
     border-top-left-radius: var(--border-radius-lg);
     border-bottom-left-radius: var(--border-radius-lg);
-  }
-}
-@for $i from 1 through 4 {
-  .category-item:nth-child(4n + #{$i}) {
-    @if $i == 1 {
-      background-color: var(--primary-color);
-    } @else if $i == 2 {
-      background-color: var(--success-color);
-    } @else if $i == 3 {
-      background-color: var(--warning-color);
-    } @else if $i == 4 {
-      background-color: var(--error-color);
+    transition: all var(--transition-base);
+    &:hover {
+      transform: translateX(2px);
+      background: rgba(79, 70, 229, 0.14);
+      border-color: rgba(79, 70, 229, 0.28);
     }
   }
+}
+
+.category-item.router-link-active,
+.category-item.router-link-exact-active {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-color), #6366f1);
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.28);
 }
 .coms {
   width: calc(1180px - 60px);
   height: 100%;
+  background: var(--surface-color);
 }
 
 h1 {
-  height: 50px;
+  height: 56px;
   margin: 20px 0;
+}
+
+.materials-page {
+  padding: 0 20px 20px;
 }
 
 .custom-tabs-label .el-icon {

@@ -15,7 +15,7 @@ defineOptions({
 
 <style scoped lang="scss">
 .survey-type-container {
-  height: calc(100vh - 50px - 40px);
+  height: calc(100vh - 56px - 40px);
   overflow: hidden;
 }
 </style>

@@ -81,5 +81,12 @@ const submitAnswers = async () => {
 <style scoped lang="scss">
 .quiz-container {
   width: 800px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
 }
 </style>
