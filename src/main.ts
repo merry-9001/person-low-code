@@ -22,6 +22,7 @@ library.add(fas)
 
 const app = createApp(App)
 
+console.log('测试部署')
 // 注册 FontAwesomeIcon 组件
 app.component('font-awesome-icon', FontAwesomeIcon)
 
