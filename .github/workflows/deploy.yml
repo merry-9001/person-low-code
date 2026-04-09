@@ -52,6 +52,6 @@ jobs:
           script_stop: true
           script: |
             cd /opt/person-low-code
-            chmod +x deploy/deploy.sh
+            chmod +x deploy.sh
             export APP_IMAGE="${{ env.IMAGE_NAME }}:latest"
-            ./deploy/deploy.sh main
+            ./deploy.sh main
